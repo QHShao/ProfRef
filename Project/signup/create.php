@@ -40,5 +40,9 @@
 						VALUES('$email', '$uname', '$password', 0)") or die(mysql_error());//if admin use 1
 		echo "You have registered successfully!";
 	}
+	if($email == 'superadmin@illinois.edu'){
+		mysql_query("UPDATE User SET Admin=1 WHERE UIUCEmail='superadmin@illinois.edu'") or die(mysql_error());
+		echo "You are Admin now!";
+	}
 	
 ?>
