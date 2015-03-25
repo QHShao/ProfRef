@@ -1,5 +1,5 @@
 <?php
-	include '../../include/connectPRdata.php';
+	include '../include/connectPRdata.php';
 	
 	/*$result get information from the query function, in which are all the professors' last name and then 
 	we store this information as the array $makes*/
@@ -9,7 +9,6 @@
    		array_push($makes, $row["LastName"]);
 	}
 	
-
  	/*make the drop list using html*/
 	echo '<select name="names">';
 	 
@@ -18,4 +17,3 @@
 	}
 	echo'</select>';
 ?>
-

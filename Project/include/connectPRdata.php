@@ -1,4 +1,5 @@
 <?php
+	//connection for admin user and normal user
 	$dbhost = 'localhost';
 	$dbuser = 'CS411';
 	$dbpass = 'q1w2e3';
