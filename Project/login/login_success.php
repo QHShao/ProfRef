@@ -20,7 +20,7 @@
 	}
 	//else normal user page
 	else{
-		header('location:/home/userUtil/getProfessor.php');
+		header('location:/home/Homepage.php');
 	}
 ?>
 

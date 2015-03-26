@@ -113,12 +113,6 @@ a:hover {
     outline: 0;
 }
 
-a.pos_fixed{
-    position:fixed;
-    top: 15px;
-    right: 15px;
-}
-
 /* ==========================================================================
    Typography
    ========================================================================== */
@@ -127,6 +121,7 @@ a.pos_fixed{
  * Addresses font sizes and margins set differently in IE6/7.
  * Addresses font sizes within `section` and `article` in FF4+, Chrome, S5.
  */
+
 div {
     opacity:0.5;
 }
