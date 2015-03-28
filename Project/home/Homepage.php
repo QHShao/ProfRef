@@ -28,34 +28,82 @@
 
 	<body>
 		<section class="addform cf">
-			<ul>				
-				<li>	
-					<?php
-						include '../include/connectPRdata.php';
-						
-						/*$result get information from the query function, in which are all the professors' last name and then 
-						we store this information as the array $makes*/
-						$result = mysql_query("SELECT LastName FROM Professor") or die(mysql_error());
-						$makes = array();
-						while ($row = mysql_fetch_array($result)) {
-					   		array_push($makes, $row["LastName"]);
-						}
-						
-					 	/*make the drop list using html*/
-						echo '<select name="names">';
-						 
-						foreach($makes as $name){
-							echo '<option value="' . $name . '">' . $name . '</option>';
-						}
-						echo'</select>';
-					?>
-				</li>
-			</ul>
+			<h3>Select Professor</h3>
+			<form name="query" action="userUtil/get_rate_Professor.php" method="post" accept-charset="utf-8">
+				<ul>				
+					<li>	
+						<?php
+							include '../include/connectPRdata.php';
+							/*$result get information from the query function, in which are all the professors' last name and then 
+							we store this information as the array $makes*/
+							$result = mysql_query("SELECT LastName FROM Professor ORDER BY illinoisEmail") or die(mysql_error());
+							$result2 = mysql_query("SELECT FirstName FROM Professor ORDER BY illinoisEmail") or die(mysql_error());
+							$makes = array();
+							$makes2 = array();
+							while ($row = mysql_fetch_array($result)) {
+						   		array_push($makes, $row["LastName"]);
+							}
+							while ($row = mysql_fetch_array($result2)) {
+						   		array_push($makes2, $row["FirstName"]);
+							}
+
+						 	/*make the drop list using html*/
+							echo '<select size="5" width="190" style="width: 190px" name="profnames" required>';
+							 
+							foreach(array_combine($makes, $makes2) as $last => $first){
+								echo '<option value="' . $last.', '.$first . '">' . $last.', '.$first . '</option>';
+							}
+							echo'</select>';
+						?>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<input type="submit" name="submit" value="Submit">
+					</li>
+				</ul>
+			</form>
+		</section>
+		<section class="addform cf">
+			<h3>Select Course</h3>
+			<form name="query" action="userUtil/get_rate_Course.php" method="post" accept-charset="utf-8">
+				<ul>				
+					<li>	
+						<?php
+							include '../include/connectPRdata.php';
+							
+							/*$result get information from the query function, in which are all the professors' last name and then 
+							we store this information as the array $makes*/
+							$result = mysql_query("SELECT CRN FROM Course ORDER BY CRN") or die(mysql_error());
+							$result2 = mysql_query("SELECT Name FROM Course ORDER BY CRN") or die(mysql_error());
+							$makes = array();//store the CRN
+							$makes2 = array();//store the Name
+							while ($row = mysql_fetch_array($result)) {
+						   		array_push($makes, $row["CRN"]);
+							}
+							while ($row = mysql_fetch_array($result2)) {
+						   		array_push($makes2, $row["Name"]);
+							}
+							
+						 	/*make the drop list using html*/
+							echo '<select size="5" width="190" style="width: 190px" name="crnname" required>';
+							
+							foreach(array_combine($makes, $makes2) as $crn => $name){
+								echo '<option value="' . $crn.' '.$name . '">' . $crn.' '.$name . '</option>';
+							}
+							echo'</select>';
+						?>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<input type="submit" name="submit" value="Submit">
+					</li>
+				</ul>
+			</form>
 		</section>
 		<div>
 			<a href="/logout/logout.php" class="pos_fixed">Log out</a>
 		</div>
 	</body>
 </html>
-
-

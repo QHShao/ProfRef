@@ -25,21 +25,25 @@
 
 <?php
 	include '../include/connectPRdata.php';
-	$lname = $_POST['LastName'];
+	$crn = $_POST['CRN'];
 	//echo $uname;
-	$fname = $_POST['FirstName'];
+	$semester = $_POST['Semester'];
 	//echo $email;
-	$email = $_POST['IllinoisEmail'];
+	$name = $_POST['Name'];
 	//echo $password;
 	
+	$prereq = $_POST['Prerequisite'];
+
+	$related = $_POST['Related'];
+
 	$submit = $_POST['Submit'];
 	//echo $submit;
 	
 	
 
 	if($submit){
-		mysql_query("INSERT INTO Professor(`LastName`, `FirstName`, `IllinoisEmail`) VALUES('$lname', '$fname', '$email')") or die(mysql_error());//if admin use 1
-		echo "<h3 align='center'>Professor Profile Added</h3>";
+		mysql_query("INSERT INTO Course(`CRN`, `Semester`, `Name`, `Prerequisite`, `Related`) VALUES('$crn', '$semester', '$name', '$prereq', '$related')") or die(mysql_error());//if admin use 1
+		echo "<h3 align='center'>Course Profile Added</h3>";
 		header('Refresh: 1; /home/AdminHome.html');
 	}
 ?>
