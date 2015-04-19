@@ -40,6 +40,6 @@
 	if($submit){
 		mysql_query("INSERT INTO Professor(`LastName`, `FirstName`, `IllinoisEmail`) VALUES('$lname', '$fname', '$email')") or die(mysql_error());//if admin use 1
 		echo "<h3 align='center'>Professor Profile Added</h3>";
-		header('Refresh: 1; /home/AdminHome.html');
+		header('Refresh: 1; /home/AdminHome.php');
 	}
 ?>

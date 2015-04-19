@@ -105,5 +105,9 @@
 		<div>
 			<a href="/logout/logout.php" class="pos_fixed">Log out</a>
 		</div>
+		<div>
+			<a href="userUtil/recommend.php">recommend courses</a>
+			<a href="userUtil/recommend.php">recommend professors</a>
+		</div>
 	</body>
 </html>

@@ -16,7 +16,7 @@
 	echo $check;
 	//if admin direct to admin home
 	if($check == 1){
-		header('Location:/home/AdminHome.html');
+		header('Location:/home/AdminHome.php');
 	}
 	//else normal user page
 	else{

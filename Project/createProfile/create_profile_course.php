@@ -44,6 +44,6 @@
 	if($submit){
 		mysql_query("INSERT INTO Course(`CRN`, `Semester`, `Name`, `Prerequisite`, `Related`) VALUES('$crn', '$semester', '$name', '$prereq', '$related')") or die(mysql_error());//if admin use 1
 		echo "<h3 align='center'>Course Profile Added</h3>";
-		header('Refresh: 1; /home/AdminHome.html');
+		header('Refresh: 1; /home/AdminHome.php');
 	}
 ?>
