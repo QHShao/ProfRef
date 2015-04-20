@@ -1,11 +1,12 @@
 <?php
 	session_start();
-	$_SESSION['profnames'] = $_POST['profnames'];//store the professor name into global var
-	//echo $_SESSION['profnames'];
+	$_SESSION['crnname'] = $_POST['crnname'];
+	//echo $_SESSION['crnname'];
 ?>
+
 <html>
 	<head>
-		<title>Rate your professor</title>
+		<title>Delete course</title>
 		<link rel="stylesheet" href="normalize.css">
 		<link rel="stylesheet" href="style.css">
 		<link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-icon-57x57.png">
@@ -26,37 +27,21 @@
 		<meta name="msapplication-TileImage" content="/icon/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 	</head>
-
 	<section class="rateform cf">
-		<form name="login" action="rateProfessor.php" method="post" accept-charset="utf-8">
+		<form name="login" action="deletec.php" method="post" accept-charset="utf-8">
+			<ul>
+				Delete this course?	
+				<li>
+					<input type="submit" name="submit" value="Yes">
+				</li>
+			</ul>
+		</form>
+		<form name="signup" action="../AdminHome.php" accept-charset="utf-8">
 			<ul>
 				<li>
-					<label for="Question1">effectiveness</label>
-					<input type="number" name="Question1" min="1" max="5" placeholder="from 1 to 5" required>
-				</li>
-				<li>
-					<label for="Question2">Helpfulness</label>
-					<input type="number" name="Question2" min="1" max="5" placeholder="from 1 to 5" required>
-				</li>
-				<li>
-					<label for="Question3">Easiness</label>
-					<input type="number" name="Question3" min="1" max="5" placeholder="from 1 to 5" required>
-				</li>
-				<li>
-					<label for="Question4">clarity</label>
-					<input type="number" name="Question4" min="1" max="5" placeholder="from 1 to 5" required>
-				</li>
-				<li>
-					<label for="Question5">fun</label>
-					<input type="number" name="Question5" min="1" max="5" placeholder="from 1 to 5" required>
-				</li>
-				<li>
-					<input type="submit" name="submit" value="Submit">
+				<input type="submit" value="No ">
 				</li>
 			</ul>
 		</form>
 	</section>
-	<div>
-			<a href="../Homepage.php" class="pos_fixed">&lt&ltBack</a>
-	</div>
 </html>

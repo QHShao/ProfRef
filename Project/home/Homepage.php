@@ -28,6 +28,17 @@
 
 	<body>
 		<section class="addform cf">
+			<h3>Add Courses Taken</h3>
+			<form name="query" action="userUtil/addcourse.php" method="post" accept-charset="utf-8">
+				<ul>				
+					<li>	
+						
+						<input type="submit" name="submit" value="+course">
+					</li>
+				</ul>
+			</form>
+		</section>
+		<section class="addform cf">
 			<h3>Select Professor</h3>
 			<form name="query" action="userUtil/get_rate_Professor.php" method="post" accept-charset="utf-8">
 				<ul>				
@@ -102,12 +113,53 @@
 				</ul>
 			</form>
 		</section>
+		<section class="addform cf">
+			<form name="query" action="userUtil/recommendc.php" method="post" accept-charset="utf-8">
+				<h3>Recommendc Professor</h3>
+				<ul>				
+					<li>
+						<select size="5" width="190" style="width: 190px" name="professorhaha" required>
+						<option>Effectiveness</option>
+						<option>Helpfulness</option>
+						<option>Easiness</option>
+						<option>clarity</option>
+						<option>fun</option>
+					</select>
+						<input type="submit" name="submit" value="QNMLGB">
+					</li>
+				</ul>
+			</form>
+		</section>
+		<section class="addform cf">
+			<form name="query" action="userUtil/recommendc.php" method="post" accept-charset="utf-8">
+				<h3>Recommendc Course</h3>
+				<ul>
+					<li>
+						<select size="5" width="190" style="width: 190px" name="coursehehe" required>
+						<option>Effectiveness</option>
+						<option>Helpfulness</option>
+						<option>Easiness</option>
+						<option>resource</option>
+						<option>fun</option>
+					</select>
+						<input type="submit" name="submit" value="QNMLGB">
+					</li>
+				</ul>
+			</form>
+		</section>
+		<section class="addform cf">
+			<form name="query" action="userUtil/classconflict.php" method="post" accept-charset="utf-8">
+				<h3>Redefine the product</h3>
+				<ul>
+					<li>
+						<input type="submit" name="submit" value="QNMLGB">
+					</li>
+				</ul>
+			</form>
+		</section>
 		<div>
 			<a href="/logout/logout.php" class="pos_fixed">Log out</a>
 		</div>
-		<div>
-			<a href="userUtil/recommend.php">recommend courses</a>
-			<a href="userUtil/recommend.php">recommend professors</a>
-		</div>
+		
 	</body>
 </html>

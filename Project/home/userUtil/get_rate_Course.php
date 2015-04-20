@@ -35,19 +35,19 @@
 					<input type="number" name="Question1" min="1" max="5" placeholder="from 1 to 5" required>
 				</li>
 				<li>
-					<label for="Question2">Easiness</label>
+					<label for="Question2">Helpfulness</label>
 					<input type="number" name="Question2" min="1" max="5" placeholder="from 1 to 5" required>
 				</li>
 				<li>
-					<label for="Question3">Helpfulness</label>
+					<label for="Question3">Easiness</label>
 					<input type="number" name="Question3" min="1" max="5" placeholder="from 1 to 5" required>
 				</li>
 				<li>
-					<label for="Question4">??????????</label>
+					<label for="Question4">resource</label>
 					<input type="number" name="Question4" min="1" max="5" placeholder="from 1 to 5" required>
 				</li>
 				<li>
-					<label for="Question5">??????????</label>
+					<label for="Question5">fun</label>
 					<input type="number" name="Question5" min="1" max="5" placeholder="from 1 to 5" required>
 				</li>
 				<li>
