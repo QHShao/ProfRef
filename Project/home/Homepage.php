@@ -39,7 +39,17 @@
 			</form>
 		</section>
 		<section class="addform cf">
-			<h3>Select Professor</h3>
+			<form name="query" action="userUtil/classconflict.php" method="post" accept-charset="utf-8">
+				<h3>Check for conflicts</h3>
+				<ul>
+					<li>
+						<input type="submit" name="submit" value="Submit">
+					</li>
+				</ul>
+			</form>
+		</section>
+		<section class="addform cf">
+			<h3>Rate a professor</h3>
 			<form name="query" action="userUtil/get_rate_Professor.php" method="post" accept-charset="utf-8">
 				<ul>				
 					<li>	
@@ -76,7 +86,7 @@
 			</form>
 		</section>
 		<section class="addform cf">
-			<h3>Select Course</h3>
+			<h3>Rate a course</h3>
 			<form name="query" action="userUtil/get_rate_Course.php" method="post" accept-charset="utf-8">
 				<ul>				
 					<li>	
@@ -115,50 +125,25 @@
 		</section>
 		<section class="addform cf">
 			<form name="query" action="userUtil/recommendc.php" method="post" accept-charset="utf-8">
-				<h3>Recommendc Professor</h3>
-				<ul>				
-					<li>
-						<select size="5" width="190" style="width: 190px" name="professorhaha" required>
-						<option>Effectiveness</option>
-						<option>Helpfulness</option>
-						<option>Easiness</option>
-						<option>clarity</option>
-						<option>fun</option>
-					</select>
-						<input type="submit" name="submit" value="QNMLGB">
-					</li>
-				</ul>
-			</form>
-		</section>
-		<section class="addform cf">
-			<form name="query" action="userUtil/recommendc.php" method="post" accept-charset="utf-8">
-				<h3>Recommendc Course</h3>
+				<h3>Recommend course by</h3>
 				<ul>
 					<li>
 						<select size="5" width="190" style="width: 190px" name="coursehehe" required>
-						<option>Effectiveness</option>
-						<option>Helpfulness</option>
-						<option>Easiness</option>
-						<option>resource</option>
-						<option>fun</option>
+						<option value="1">Effectiveness</option>
+						<option value="2">Helpfulness</option>
+						<option value="3">Easiness</option>
+						<option value="4">Resources</option>
+						<option value="5">Fun</option>
 					</select>
-						<input type="submit" name="submit" value="QNMLGB">
+						<input type="submit" name="submit" value="Submit">
 					</li>
 				</ul>
 			</form>
 		</section>
-		<section class="addform cf">
-			<form name="query" action="userUtil/classconflict.php" method="post" accept-charset="utf-8">
-				<h3>Redefine the product</h3>
-				<ul>
-					<li>
-						<input type="submit" name="submit" value="QNMLGB">
-					</li>
-				</ul>
-			</form>
-		</section>
+		
 		<div>
 			<a href="/logout/logout.php" class="pos_fixed">Log out</a>
+			<a href="/home/changepass.php" class="pos_fixed2">Change password</a>
 		</div>
 		
 	</body>

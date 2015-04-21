@@ -118,6 +118,11 @@ a.pos_fixed{
     top: 15px;
     right: 15px;
 }
+a.pos_fixed2{
+    position:fixed;
+    top: 15px;
+    right: 70px;
+}
 
 /* ==========================================================================
    Typography

@@ -33,9 +33,14 @@ include '../../include/connectPRdata.php';
 		if(!$idd){
 			$query = "INSERT INTO CoursesTaken (`UIUCEmail`, `CourseName`, `CRN`) VALUES ('$email', '$course1', '$c')";
 			mysql_query($query);
+			header('Refresh:0');
 		}
 	}
-	//header('');
 	
 
 ?>
+<html>
+	<div>
+			<a href="../Homepage.php" class="pos_fixed">&lt&ltBack</a>
+	</div>
+	</html>

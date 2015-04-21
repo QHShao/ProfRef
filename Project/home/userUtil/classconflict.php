@@ -1,11 +1,38 @@
 <?php
 		include '../../include/connectPRdata.php';
 		session_start();
+
+
+		$user = $_SESSION['myusername'];
+		 $classrequiredQuery = mysql_query("SELECT Name,MajorRequired FROM Course");    
+    	$classtakenQuery = mysql_query("SELECT CourseName From CoursesTaken WHERE UIUCEmail='$user'");
+    	
+    	$checkarray = array();
+    	
+    	while($row = mysql_fetch_array($classtakenQuery)){
+ 			$checkarray[] = $row['CourseName'];
+ 			//echo $checkarray;
+		}
+
+		$email = $_SESSION['myusername'];
+		$q = "SELECT CourseName FROM CoursesTaken WHERE UIUCEmail = '$email'";
+		echo 'Courses you have taken: ';
+		echo '<br>';
+		$result = mysql_query($q);
+		while($row = mysql_fetch_assoc($result)){
+			echo $row['CourseName'];
+			echo '<br>';
+		}
+
+		echo 'Please choose a course:';
 	$query = "SELECT Course.Name, SectionInfo.StartTime, SectionInfo.EndTime from Course INNER JOIN SectionInfo WHERE Course.CRN = SectionInfo.CRN";
 	$result = mysql_query($query);
 	echo '<form action="#" method="post">';
 	while($row = mysql_fetch_assoc($result)){
-		echo '<input type="checkbox" name="checklist[]" value="'.$row['Name'].'">'.$row['Name'].'<br>';
+		if(in_array($row['Name'], $checkarray)){
+				//echo 'aaaaaaaaaaaaaaaaaaaaaa';
+			} 
+		else echo '<input type="checkbox" name="checklist[]" value="'.$row['Name'].'">'.$row['Name'].'<br>';
 		
 	}
 	echo '<input type="submit" name="submit" value="select">';
@@ -74,17 +101,8 @@
 	}*/
 ?>
 
-<!--$query = "SELECT classname FROM Classes WHERE Classes.id not in (SELECT ClassId from ClassTaken, Students where username = '$_SESSION[username]' and ClassTaken.StudentId = Students.id)";
-if($result = mysqli_query($link, $query)){
-	while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-		echo '<input style="padding-bottom:5px;" type="checkbox" name="classes[]" value="'.$row["classname"].'">'.$row["classname"].'<br>';
-	}
-}
-echo '<input type="hidden" name="add" value="true">';
-echo '<input style="margin-left: 20px; margin-top: 10px;" type="submit" value="Select Class">';
-echo '</form><br><br>';-->
-
-<!--SELECT t.id
-FROM TABLE t
-WHERE ('$end_time' > t.start_time AND '$request_start_time' < addtime(t.start_time, t.duration))
-AND t.id <> $request_entry_id-->
+<html>
+	<div>
+			<a href="../Homepage.php" class="pos_fixed">&lt&ltBack</a>
+	</div>
+	</html>
